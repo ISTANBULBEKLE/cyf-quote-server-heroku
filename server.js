@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const quotes = require("./quotes.json");
 
+// Middlewares; 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended:true}));
