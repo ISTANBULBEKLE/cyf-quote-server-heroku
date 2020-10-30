@@ -25,6 +25,20 @@ app.get('/', function(request, response) {
   response.send('/quotes/17 should return one quote, by id')
 });
 
+app.get('/db', async (req, res) => {
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT * FROM test_table');
+      const results = { 'results': (result) ? result.rows : null};
+      res.render('pages/db', results );
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("Error " + err);
+    }
+  })
+
+
 //Reading all the quotes;
 app.get("/quotes", function(request, response){
   response.json(quotes);
