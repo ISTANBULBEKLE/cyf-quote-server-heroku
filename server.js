@@ -1,3 +1,12 @@
+const { Pool } = require('pg');
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+
 const express = require("express");
 const app = express();
 const cors = require('cors');
@@ -55,5 +64,4 @@ let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
 }
-
-app.listen(port, console.log('server is running'));
+app.listen(port, 'server is running' );
