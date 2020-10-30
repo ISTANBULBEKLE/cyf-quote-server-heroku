@@ -65,7 +65,7 @@ app.put('/quotes/:id', (req, res)=>{
 
     if (existingQuote !== "" && newQuote !== "") {
       existingQuote.quote = newQuote.quote;
-      existingQuote.author = newQuote.fauthor;
+      existingQuote.author = newQuote.author;
       res.status(200).send('Quote updated');
     } else{
       res.status(400).send('Quote not found');
@@ -73,7 +73,7 @@ app.put('/quotes/:id', (req, res)=>{
 });
 
 
-
+//Listen to server
 let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
