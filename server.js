@@ -45,10 +45,10 @@ app.get("/quotes", function(request, response){
 });
 
 // Reading a random quotes;
-/* app.get("/quotes/random", function(request, response) {
+app.get("/quotes/random", function(request, response) {
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   response.send(randomQuote);
-}); */
+});
 
 
 // Reading one quote specified by an ID;
@@ -81,8 +81,9 @@ app.put('/quotes/:id', (req, res)=>{
 
 
 //Listen to server
-let port = process.env.PORT;
+/* let port = process.env.PORT;
 if (port == null || port == "") {
   port = 8000;
-}
-app.listen(port, 'server is running' );
+} */
+
+app.listen(process.env.PORT, 'server is running' );
