@@ -44,6 +44,13 @@ app.get("/quotes", function(request, response){
   response.json(quotes);
 });
 
+// Reading a random quotes;
+app.get("/quotes/random", function(request, response) {
+  let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  response.send(randomQuote);
+});
+
+
 // Reading one quote specified by an ID;
 app.get('/quotes/:id', (req, res) => {
     const Id = req.params.id;
