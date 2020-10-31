@@ -45,10 +45,10 @@ app.get("/quotes", function(request, response){
 });
 
 // Reading a random quotes;
-app.get("/quotes/random", function(request, response) {
+/* app.get("/quotes/random", function(request, response) {
   let randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   response.send(randomQuote);
-});
+}); */
 
 
 // Reading one quote specified by an ID;
